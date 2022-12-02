@@ -36,13 +36,27 @@ public class PlateauDeJeu {
             return true;
     }
     public void afficherGrilleSurConsole(){
-        for (int i= 5; i >=0; i--){
+        for (int i= 6; i >=0; i--){
+            if (i != 6){
+            System.out.print(i + " ");
+            }else{
+                System.out.print("  ");
+            }
            for (int j=0; j<7; j++){
+               if (i == 6){
+                   if (j ==6){
+                    System.out.println(j + " ");
+                   }
+                   else{
+                   System.out.print(j + " ");
+                   }
+               }else{
                if (j == 6){
                    System.out.println(grille[i][j]);
                }
                else{
                    System.out.print(grille[i][j] + " " );
+               }
                }
             }
         }

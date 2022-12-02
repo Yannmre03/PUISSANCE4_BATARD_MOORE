@@ -4,6 +4,8 @@
  */
 package puissance4_batard_moore;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Administrateur
@@ -15,8 +17,11 @@ public class PUISSANCE4_BATARD_MOORE {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Joueur Julia = new Joueur("Julia");
-        Joueur Yann = new Joueur("Yann");
+        Scanner sc = new Scanner(System.in);
+        System.out.println("entrez le nom du joueur 1");
+        Joueur Julia = new Joueur(sc.nextLine());
+        System.out.println("entrez le nom du joueur 2");
+        Joueur Yann = new Joueur(sc.nextLine());
         Partie nouvellePartie = new Partie(Julia, Yann);
         nouvellePartie.lancerPartie();
         
