@@ -157,6 +157,8 @@ public class Partie {
         int nvJoueur = jr.nextInt(0, 2);
         joueurCourant = ListeJoueurs[nvJoueur];
         while (plateau.partieGagnee(joueurCourant.couleur) != true || plateau.grilleRemplie() != true) {            
+            System.out.println("il vous reste: " + joueurCourant.nombreDeJetons() + " jetons");
+            System.out.println("il vous reste: " + joueurCourant.getNbDesintegrateurs()+ " desintegrateurs");
             Scanner sc = new Scanner(System.in);
             int choix;
             do{
@@ -173,9 +175,11 @@ public class Partie {
                 utiliserDesintegrateur();}
             
             plateau.afficherGrilleSurConsole();
+            
             }while ((choix != 3 && choix != 2 && choix != 1 && choix != 4));
             
             if(choix ==4){break;}
+            
             if(ListeJoueurs[0].couleur == joueurCourant.couleur){joueurCourant = ListeJoueurs[1];}
             else{joueurCourant = ListeJoueurs[0];}
         }
